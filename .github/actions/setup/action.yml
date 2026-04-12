@@ -1,0 +1,23 @@
+name: Setup
+description: Setup the environment
+
+runs:
+  using: composite
+  steps:
+    - name: Setup PNPM
+      uses: pnpm/action-setup@08c4be7e2e672a47d11bd04269e27e5f3e8529cb # v6.0.0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+      with:
+        node-version-file: .node-version
+        cache: pnpm
+        registry-url: https://registry.npmjs.org
+
+    - name: Upgrade npm for trusted publishing
+      shell: bash
+      run: npm install -g npm@latest
+
+    - name: Install Dependencies
+      shell: bash
+      run: pnpm i
