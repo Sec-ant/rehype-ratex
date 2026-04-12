@@ -1,6 +1,6 @@
 {
   "name": "@sec-ant/rehype-ratex",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "rehype plugin to render math with RaTeX (KaTeX-compatible, Rust/WASM)",
   "private": false,
   "type": "module",
